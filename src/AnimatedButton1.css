@@ -1,0 +1,33 @@
+  @keyframes anime 
+  {
+    0% {background-position: 30% 50%}
+    50% {background-position: 70% 50%}
+    100% {background-position: 30% 50%}
+  }
+
+    @-webkit-keyframes anime {
+        0%{background-position: 20% 50%}
+        50%{background-position: 70% 50%}
+        100%{background-position: 20% 50%}
+    }
+    @-moz-keyframes anime {
+        0%{background-position: 20% 50%}
+        50%{background-position: 70% 50%}
+        100%{background-position: 20% 50%}
+    }
+
+  .animated-button {
+     color: rgba(255,255,255,0.9);
+     border-radius: 10px;
+     background: linear-gradient(-45deg,  #f712ff, white, #338AFF);
+     background-size: 600% 600%;
+ 
+
+     animation: anime 5s linear infinite;
+     -webkit-animation: anime 5s linear infinite;
+     -moz-animation: anime 16s linear infinite;
+     
+  }
+  
+  
+  
