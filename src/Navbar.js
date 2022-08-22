@@ -6,13 +6,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useWeb3React } from "@web3-react/core";
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import ModalWallet from "./ModalWallet";
 
 function Navbar() {
     const navigate = useNavigate();
     const handleOnClick = useCallback(() => navigate('/doc_upload', {replace: true}), [navigate]);
-    const handleOnClick2 = useCallback(() => navigate('/doc_check', {replace: true}), [navigate]);
+    const handleOnClick2 = useCallback(() => navigate('/', {replace: true}), [navigate]);
 
     const {
       library,
@@ -47,17 +46,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-/*<nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/blogs">Blogs</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
-    </nav>*/

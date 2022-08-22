@@ -17,6 +17,7 @@ const walletconnect = new WalletConnectConnector({
 });
 
 const sequenceConnector = new SequenceConnector({
+    chainId: 80001,
     url: `https://rpc-mumbai.maticvigil.com/`,
     appName: "sequenceConnector"
 });

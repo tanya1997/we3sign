@@ -1,0 +1,13 @@
+.main{
+  display: table;
+  text-align: center;
+  background-color: #fbc531;
+  height: 60px;
+  width: 100%;
+}
+
+.inner {
+    display: table-cell;
+    vertical-align: middle;
+    color: #FFFFFF;
+  }

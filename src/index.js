@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 import { Web3ReactProvider } from "@web3-react/core";
 import { ethers } from "ethers";
+import { MoralisProvider } from "react-moralis";
 
 const getLibrary = (provider) => {
   const library = new ethers.providers.Web3Provider(provider);
@@ -16,9 +17,11 @@ const getLibrary = (provider) => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <App style={{ backgroundImage: `url(/4853433.jpg)` }}/>
-    </Web3ReactProvider>
+     <MoralisProvider appId="LVPSvKczr0dc8endeBOobATuN8Z65ND0KP2jxWDo" serverUrl="https://ph04nxxxflg1.usemoralis.com:2053/server">
+      <Web3ReactProvider getLibrary={getLibrary}>
+        <App style={{ backgroundImage: `url(/4853433.jpg)` }}/>
+      </Web3ReactProvider>
+    </MoralisProvider>
   </React.StrictMode>
 );
 

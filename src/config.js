@@ -1,35 +1,7 @@
-export const contractAddress = "0x3935922f5397f8951601239e79a3165d10896a29"; // NFT smart contract Address
+export const contractAddress = "0x527374d5022bb4f763ce74fb6f50d4859b4a22ac"; // NFT smart contract Address
 
 
 export const abi = [
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_key",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "key",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "owner1",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "path1",
-				"type": "string"
-			}
-		],
-		"name": "addDocument",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
 	{
 		"inputs": [
 			{
@@ -52,13 +24,46 @@ export const abi = [
 	{
 		"inputs": [
 			{
+				"internalType": "string[]",
+				"name": "_key",
+				"type": "string[]"
+			},
+			{
+				"internalType": "string",
+				"name": "dateTime",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "secret",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "owner1",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "nftPath",
+				"type": "string"
+			}
+		],
+		"name": "addDocument",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "string",
 				"name": "_key",
 				"type": "string"
 			},
 			{
 				"internalType": "string",
-				"name": "key",
+				"name": "secret",
 				"type": "string"
 			}
 		],
@@ -68,7 +73,12 @@ export const abi = [
 				"components": [
 					{
 						"internalType": "string",
-						"name": "key",
+						"name": "dateTime",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "secret",
 						"type": "string"
 					},
 					{
@@ -78,7 +88,7 @@ export const abi = [
 					},
 					{
 						"internalType": "string",
-						"name": "path",
+						"name": "nftPath",
 						"type": "string"
 					}
 				],

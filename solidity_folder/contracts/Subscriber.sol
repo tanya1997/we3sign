@@ -3,9 +3,10 @@ pragma experimental ABIEncoderV2;
 
 contract Subscriber {
     struct Document {
-        string key;
+        string dateTime;
+        string secret;
         address owner;
-        string path;
+        string nftPath;
     }
     
     //uint addressRegistryCount;
@@ -14,21 +15,23 @@ contract Subscriber {
     string[] public _document_key;
     
 
-     function addDocument (string memory _key, string memory key, address owner1, string memory path1) public {
-          documents[_key].push(Document(key, owner1, path1));
-         _document_key.push(string(_key));
+     function addDocument (string[] memory _key, string memory dateTime, string memory secret, address owner1, string memory nftPath) public {
+         for (uint i=0; i<_key.length; i++){
+            documents[_key[i]].push(Document(dateTime, secret, owner1, nftPath));
+            _document_key.push(string(_key[i]));
+         }
      }
 
 
-     function getDocumentByKey (string memory _key, string memory key) public view returns ( Document[] memory ) {
+     function getDocumentByKey (string memory _key, string memory secret) public view returns ( Document[] memory ) {
           Document[] memory arrayDocument;
           Document[] memory arrayRawDocument = documents[_key];
           uint counter = 0;
-         if (keccak256(bytes(key)) == keccak256(bytes(""))){
+         if (keccak256(bytes(secret)) == keccak256(bytes(""))){
              return arrayRawDocument;
          }else{
             for (uint i=0; i<arrayRawDocument.length; i++) {
-                if (keccak256(bytes(arrayRawDocument[i].key)) == keccak256(bytes(key))){
+                if (keccak256(bytes(arrayRawDocument[i].secret)) == keccak256(bytes(secret))){
                     arrayDocument[counter] = arrayRawDocument[i];
                     counter++;
                 }
@@ -37,4 +40,3 @@ contract Subscriber {
          }
     }
 }
-

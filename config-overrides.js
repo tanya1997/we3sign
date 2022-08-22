@@ -9,7 +9,10 @@ module.exports = function override(config) {
         "http": require.resolve("stream-http"),
         "https": require.resolve("https-browserify"),
         "os": require.resolve("os-browserify"),
-        "url": require.resolve("url")
+        "url": require.resolve("url"),
+        "process": require.resolve("process"),
+        "fs": require.resolve('fs'),
+        "zlib": require.resolve('browserify-zlib')
     })
     config.resolve.fallback = fallback;
     config.plugins = (config.plugins || []).concat([
@@ -18,5 +21,11 @@ module.exports = function override(config) {
             Buffer: ['buffer', 'Buffer']
         })
     ])
+    config.module.rules.push({
+        test: /\.m?js/,
+        resolve: {
+            fullySpecified: false
+        }
+    })
     return config;
 }
