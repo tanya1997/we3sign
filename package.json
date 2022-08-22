@@ -1,6 +1,7 @@
 {
   "name": "document_sign",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@0xsequence/web3-react-v6": "^1.0.1",
